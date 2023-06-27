@@ -1,0 +1,9 @@
+[build-options]
+  observabilityIncluded = true
+
+[package]
+  distribution = "2201.6.0"
+  name = "uuu"
+  org = "dewniweera2org1"
+  version = "0.1.0"
+
