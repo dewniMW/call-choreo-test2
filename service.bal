@@ -2,6 +2,7 @@ import ballerina/http;
 
 type RiskResponse record {
 boolean hasRisk;
+string countryCode;
 };
 
 type RiskRequest record {
@@ -24,7 +25,8 @@ resource function post risk(@http:Payload RiskRequest req) returns RiskResponse|
      
      RiskResponse resp = {
           // hasRisk is true if the country code of the IP address is not the specified country code.
-          hasRisk: geoResponse.country_code2 != "LK"
+          hasRisk: geoResponse.country_code2 != "LK",
+          countryCode: geoResponse.country_code2
      };
      return resp;
 }
